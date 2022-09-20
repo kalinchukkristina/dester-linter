@@ -1,7 +1,7 @@
 # dexter-linter
 A repository for my individual project where I create a linter for LaTeX files.
 
-The command is run as a command-line tool: "dexter-linter filename".
+The command is run as a command-line tool: "dexter-linter filename".\
 Arguments:\
 filename - path to the file you want to execute the linter on.
 
