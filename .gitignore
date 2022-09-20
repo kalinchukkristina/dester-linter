@@ -2,6 +2,7 @@
 
 __pycache__/
 material/
+.DS_Store
 dester-egg.info/
 dester.egg-info/PKG-INFO
 dester.egg-info/SOURCES.txt
