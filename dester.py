@@ -8,7 +8,7 @@ import click
 
 @click.command()
 @click.argument("file", type=click.Path(exists=True), required=True)
-@click.option("--comment", default=1, type=int, help="How many spaces to insert after %?")
+@click.option("--comment", default=1, type=int, help="How many spaces to insert after %")
 @click.option("--newline", default=True, type=bool, help="Insert a new line after a sentence?")
 def main(file, comment, newline):
     """
