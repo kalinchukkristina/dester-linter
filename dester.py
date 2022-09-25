@@ -29,7 +29,7 @@ def main(file, comment, newline):
                         _f2.write(f"{line[0:end-1]}{num_of_spaces}{line[end-1:]}")
                     elif re.search(r"^%[^ %]", line):
                         _f2.write(f"{line[0]}{num_of_spaces}{line[1:]}")
-                    elif newline and re.search(r"[\.!?;]$", line) and \
+                    elif newline and re.search(r"^(?![%]).*[\.!?;:]$", line) and \
                         content[next_line_index] != "\n":
                         _f2.write(f"{line}\n")
                     else:
