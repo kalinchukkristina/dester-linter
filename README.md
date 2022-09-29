@@ -7,5 +7,5 @@ filename - path to the file you want to execute the linter on.
 
 Options:\
 --comment=int - passes how many spaces should be inserted after a comment sign;\
---newline=bool - if False is passed the new line will not be inserted after a sentence;
+--newline=bool - if False is passed the new line will not be inserted after a sentence;\
 --blank
