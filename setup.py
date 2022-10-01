@@ -1,4 +1,6 @@
-from importlib.metadata import entry_points
+"""
+creates a cli tool dester
+"""
 from setuptools import setup, find_packages
 
 setup(
