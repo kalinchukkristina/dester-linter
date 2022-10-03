@@ -23,8 +23,12 @@ def indentation_rule_main(content, number_of_spaces):
                     marker = True
                     break
                 # indents the line within the block
-                index +=1
-                content_formatted_indentation.append(number_of_spaces + line_within_the_block)
+                if not re.search(r"^\s", line_within_the_block):
+                    index +=1
+                    content_formatted_indentation.append(number_of_spaces + line_within_the_block)
+                else:
+                    index +=1
+                    content_formatted_indentation.append(line_within_the_block)
         # reverses marker to start appending the lines outside of the block
         elif re.search(r"\\end{(?!document).*}", line):
             content_formatted_indentation.append(line)

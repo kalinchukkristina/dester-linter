@@ -5,7 +5,7 @@ import re
 
 def comment_rule_main(content, number_of_space):
     """
-    the main function whick identifies the lines with comments
+    the main function which identifies the lines with comments
     """
     content_formatted_comments = []
     for line in content:
