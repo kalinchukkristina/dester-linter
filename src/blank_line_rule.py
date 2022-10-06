@@ -15,7 +15,7 @@ def blank_line_rule_main(content, number_of_blank_lines):
     for line in content:
         current_line_index = content.index(line)
         prev_line_index = current_line_index - 1
-        if re.search(r"^\\section|\\subsection|\\chapter|\\subsubsection|\\paragraph|\\subparagraph", line) \
+        if re.search(r"^\\section|^\\subsection|^\\chapter|^\\subsubsection|^\\paragraph|^\\subparagraph", line) \
            and content[prev_line_index] != "\n":
             content_formatted_sections.append(f"{blank_lines}{line}")
         else:
