@@ -2,9 +2,10 @@
 Entry point for dester-linter
 """
 
-# pylint: disable=no-value-for-parameter, line-too-long
+# pylint: disable=no-value-for-parameter, line-too-long, too-many-arguments
 
 import os
+import platform
 import click
 import src.comment_rule
 import src.newline_rule
@@ -24,6 +25,11 @@ def main(input_file, comment, newline, indent, blank_lines, overwrite):
     the main function to check all the parameters and execute the program
     """
     file_name, file_extension = os.path.splitext(input_file)
+    if platform.system() == "Windows":
+        escape_seq = "\r\n"
+    else :
+        escape_seq = "\n"
+
     if overwrite:
         output_file = input_file
     else:
@@ -34,12 +40,12 @@ def main(input_file, comment, newline, indent, blank_lines, overwrite):
             content = _f.readlines()
             formatted_comments_content = src.comment_rule.comment_rule_main(content, comment)
             if newline:
-                formatted_newline_content = src.newline_rule.newline_rule_main(formatted_comments_content)
+                formatted_newline_content = src.newline_rule.newline_rule_main(formatted_comments_content, escape_seq)
                 formatted_indent_content = src.indentation_rule.indentation_rule_main(formatted_newline_content, indent)
-                formatted_sections_content = src.blank_line_rule.blank_line_rule_main(formatted_indent_content, blank_lines)
+                formatted_sections_content = src.blank_line_rule.blank_line_rule_main(formatted_indent_content, blank_lines, escape_seq)
             else:
                 formatted_indent_content = src.indentation_rule.indentation_rule_main(formatted_comments_content, indent)
-                formatted_sections_content = src.blank_line_rule.blank_line_rule_main(formatted_indent_content, blank_lines)
+                formatted_sections_content = src.blank_line_rule.blank_line_rule_main(formatted_indent_content, blank_lines, escape_seq)
         with open(output_file, "w", encoding="utf-8") as output:
             for lines in formatted_sections_content:
                 output.write(lines)
