@@ -1,16 +1,16 @@
 [build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
 
 [project]
 name = "dester-linter"
-version = "0.0.1"
+version = "1.0.0"
 authors = [
-  { name="Krystyna Kalinchuk", email="christinakalinchuk@gmail.com" },
+  { name="Krystyna Kalinchuk", email="christinakalinchuk@gmail.com" }
 ]
-description = "A dester-linter to lint LaTeX files"
+description = "A dester-linter to format LaTeX files"
 readme = "README.md"
-requires-python = ">=3.0"
+requires-python = ">=3.5"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
@@ -19,6 +19,7 @@ classifiers = [
 dependencies = [
     "click==8.1.3"
 ]
+dynamic = ["version", "description"]
 
 [project.scripts]
 dester-linter = "src.dester:main"

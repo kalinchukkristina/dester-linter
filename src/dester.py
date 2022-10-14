@@ -15,11 +15,11 @@ import blank_line_rule
 
 @click.command()
 @click.argument("input_file", type=click.Path(exists=True), required=True)
-@click.option("--comment", default=1, type=int, help="How many spaces to insert after %")
+@click.option("--comment", default=1, type=int, help="How many spaces to insert after %?")
 @click.option("--newline", default=True, type=bool, help="Insert a new line after a sentence?")
-@click.option("--indent", default=4, type=int, help="Indent content within the block")
+@click.option("--indent", default=4, type=int, help="Indent content within the block.")
 @click.option("--blank_lines", default=1, type=int, help="Number of blank lines to be inserted before section/chapter etc.")
-@click.option("--overwrite", default=False, type=bool, help="Overwrite the original input file")
+@click.option("--overwrite", default=False, type=bool, help="Overwrite the original input file.")
 def main(input_file, comment, newline, indent, blank_lines, overwrite):
     """
     the main function to check all the parameters and execute the program
