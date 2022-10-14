@@ -2,7 +2,7 @@
 A linter to modify LaTeX files.
 """
 
-__version__ = "0.4"
+__version__ = "0.6"
 
 import os
 import sys
