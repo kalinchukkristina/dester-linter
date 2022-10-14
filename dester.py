@@ -1,16 +1,23 @@
 """
-Entry point for dester-linter
+A linter to modify LaTeX files.
 """
+
+__version__ = "0.4"
+
+import os
+import sys
+
+file_dir = os.path.dirname(__file__)
+sys.path.append(file_dir)
 
 # pylint: disable=no-value-for-parameter, line-too-long, too-many-arguments
 
-import os
 import platform
 import click
-import comment_rule
-import newline_rule
-import indentation_rule
-import blank_line_rule
+from src.comment_rule import comment_rule_main
+from  src.newline_rule import newline_rule_main
+from src.indentation_rule import indentation_rule_main
+from src.blank_line_rule import blank_line_rule_main
 
 
 @click.command()
@@ -38,14 +45,14 @@ def main(input_file, comment, newline, indent, blank_lines, overwrite):
     if file_extension in (".tex", ".bib", ".tikz"):
         with open(input_file, "r", encoding="utf-8") as _f:
             content = _f.readlines()
-            formatted_comments_content = comment_rule.comment_rule_main(content, comment)
+            formatted_comments_content = comment_rule_main(content, comment)
             if newline:
-                formatted_newline_content = newline_rule.newline_rule_main(formatted_comments_content, escape_seq)
-                formatted_indent_content = indentation_rule.indentation_rule_main(formatted_newline_content, indent)
-                formatted_sections_content = blank_line_rule.blank_line_rule_main(formatted_indent_content, blank_lines, escape_seq)
+                formatted_newline_content = newline_rule_main(formatted_comments_content, escape_seq)
+                formatted_indent_content = indentation_rule_main(formatted_newline_content, indent)
+                formatted_sections_content = blank_line_rule_main(formatted_indent_content, blank_lines, escape_seq)
             else:
-                formatted_indent_content = indentation_rule.indentation_rule_main(formatted_comments_content, indent)
-                formatted_sections_content = blank_line_rule.blank_line_rule_main(formatted_indent_content, blank_lines, escape_seq)
+                formatted_indent_content = indentation_rule_main(formatted_comments_content, indent)
+                formatted_sections_content = blank_line_rule_main(formatted_indent_content, blank_lines, escape_seq)
         with open(output_file, "w", encoding="utf-8") as output:
             for lines in formatted_sections_content:
                 output.write(lines)
