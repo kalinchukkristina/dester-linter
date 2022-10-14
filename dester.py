@@ -14,10 +14,10 @@ sys.path.append(file_dir)
 
 import platform
 import click
-from src.comment_rule import comment_rule_main
-from  src.newline_rule import newline_rule_main
-from src.indentation_rule import indentation_rule_main
-from src.blank_line_rule import blank_line_rule_main
+from comment_rule import comment_rule_main
+from  newline_rule import newline_rule_main
+from indentation_rule import indentation_rule_main
+from blank_line_rule import blank_line_rule_main
 
 
 @click.command()

@@ -3,7 +3,7 @@ test suite for the indentation rule
 """
 
 import unittest
-from src.indentation_rule import indentation_rule_main
+from indentation_rule import indentation_rule_main
 
 class TestIndentationRule(unittest.TestCase):
     """

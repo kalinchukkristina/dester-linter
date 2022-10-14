@@ -3,7 +3,7 @@ test suite for comment rule
 """
 
 import unittest
-from src.comment_rule import comment_rule_main
+from comment_rule import comment_rule_main
 
 class TestCommentRule(unittest.TestCase):
     """
