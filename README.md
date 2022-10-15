@@ -1,10 +1,10 @@
 # dester-linter
 
 ## Description
-A repository for my individual project where I create a linter for LaTeX files.
+A linter for LaTeX files.
 
 ## How to install
-pip install dester-linter
+pip install dester
 
 ## How to use
 The command is run as a command-line tool: "dexter-linter filename".\
