@@ -2,7 +2,7 @@
 A linter to modify LaTeX files.
 """
 
-__version__ = "0.8"
+__version__ = "0.9"
 
 # pylint: disable=no-value-for-parameter, line-too-long, too-many-arguments
 import os, sys
