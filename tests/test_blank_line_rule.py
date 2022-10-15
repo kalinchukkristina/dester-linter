@@ -3,7 +3,7 @@ test suite for the blank line before chapter/section rule
 """
 
 import unittest
-from blank_line_rule import blank_line_rule_main
+from src.blank_line_rule import blank_line_rule_main
 
 class TestBlankLineRule(unittest.TestCase):
     """

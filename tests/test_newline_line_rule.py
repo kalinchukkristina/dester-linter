@@ -3,7 +3,7 @@ test suit for the newline aftre a sentence rule
 """
 
 import unittest
-from newline_rule import newline_rule_main
+from src.newline_rule import newline_rule_main
 
 class TestNewlineRule(unittest.TestCase):
     """
