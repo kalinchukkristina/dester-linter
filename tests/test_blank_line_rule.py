@@ -1,9 +1,10 @@
 """
 test suite for the blank line before chapter/section rule
 """
+# pylint: disable=line-too-long
 
 import unittest
-from src.blank_line_rule import blank_line_rule_main
+from dester import blank_line_rule_main
 
 class TestBlankLineRule(unittest.TestCase):
     """
@@ -13,8 +14,8 @@ class TestBlankLineRule(unittest.TestCase):
         """
         test case for content without sections/chapters etc.
         """
-        content = ["Start", "End", "\\begin{docuemnt}", "\\begin{test}" "Sentence.", "\\end{test}", "\\end{document}"]
-        modified_content = ["Start", "End", "\\begin{docuemnt}", "\\begin{test}" "Sentence.", "\\end{test}", "\\end{document}"]
+        content = ["Start", "End", "\\begin{docuemnt}", "\\begin{test}", "Sentence.", "\\end{test}", "\\end{document}"]
+        modified_content = ["Start", "End", "\\begin{docuemnt}", "\\begin{test}", "Sentence.", "\\end{test}", "\\end{document}"]
         result = blank_line_rule_main(content, 1, "\n")
         self.assertEqual(result, modified_content)
 

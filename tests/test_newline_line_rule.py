@@ -2,8 +2,10 @@
 test suit for the newline aftre a sentence rule
 """
 
+# pylint: disable=line-too-long
+
 import unittest
-from src.newline_rule import newline_rule_main
+from dester import newline_rule_main
 
 class TestNewlineRule(unittest.TestCase):
     """

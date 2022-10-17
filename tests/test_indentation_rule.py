@@ -2,8 +2,10 @@
 test suite for the indentation rule
 """
 
+# pylint: disable=line-too-long
+
 import unittest
-from src.indentation_rule import indentation_rule_main
+from dester import indentation_rule_main
 
 class TestIndentationRule(unittest.TestCase):
     """

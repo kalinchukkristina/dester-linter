@@ -2,8 +2,10 @@
 test suite for comment rule
 """
 
+# pylint: disable=line-too-long
+
 import unittest
-from src.comment_rule import comment_rule_main
+from dester import comment_rule_main
 
 class TestCommentRule(unittest.TestCase):
     """
@@ -61,7 +63,7 @@ class TestCommentRule(unittest.TestCase):
         modified_content = ["%%%      Start", "End", "\\begin{section}", "%%%      end{section}", "\\end{document}"]
         result = comment_rule_main(content, 6)
         self.assertEqual(result, modified_content)
-    
+
     def test_comment_rule_one_percent_sign_in_the_end_of_string(self):
         """
         test case if percent sign is not at the beginning of the line

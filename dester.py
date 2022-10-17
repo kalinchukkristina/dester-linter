@@ -1,10 +1,13 @@
 """
 A linter to modify LaTeX files.
 """
-__version__ = "0.9"
+__version__ = "1.0"
 
-# pylint: disable=no-value-for-parameter, line-too-long, too-many-arguments
-import os, platform, re, click
+# pylint: disable=no-value-for-parameter, line-too-long, too-many-arguments, too-many-locals
+import os
+import platform
+import re
+import click
 
 @click.command()
 @click.argument("input_file", type=click.Path(exists=True), required=True)
