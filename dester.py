@@ -1,7 +1,7 @@
 """
 A linter to modify LaTeX files.
 """
-__version__ = "1.0"
+__version__ = "0.2"
 
 # pylint: disable=no-value-for-parameter, line-too-long, too-many-arguments, too-many-locals
 import os

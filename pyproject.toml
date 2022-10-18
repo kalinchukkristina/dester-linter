@@ -4,6 +4,7 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "dester"
+requires-python = ">3.7"
 authors = [{name = "Krystyna Kalinchuk", email = "christinakalinchuk@gmail.com"}]
 readme = "README.md"
 license = {file = "LICENSE"}
